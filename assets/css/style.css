@@ -3,9 +3,33 @@
   margin: 0;
   box-sizing: border-box;
 }
+html {
+  font-size: 62.5%;
+  font-family: "Playfair Display", serif;
+}
 section {
   position: relative;
   min-height: 100vh;
+}
+.background-black {
+  position: absolute;
+  z-index: 10;
+  min-height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  clip-path: polygon(60% 0, 100% 0, 100% 100%, 0% 100%);
+  background: linear-gradient(180deg, #000000 0%, #202020 100%);
+}
+.background-mint {
+  position: absolute;
+  z-index: 20;
+  min-height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  clip-path: polygon(0 51%, 0% 100%, 100% 100%);
+  background: linear-gradient(180deg, #c2ffdc 0%, #75ffb1a6 100%);
 }
 .app {
   position: absolute;
@@ -21,21 +45,95 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: white;
+  z-index: 100;
 }
 h1 {
-  font-size: 55px;
+  font-size: 65px;
   text-align: center;
   margin: 30px 0;
+  font-weight: 800;
+  /* text-shadow: 2px 2px #000000; */
 }
 .new-item {
   text-align: center;
-  margin-bottom: 30px;
-  padding: 30px;
-  width: 100%;
-  background-color: rebeccapurple;
+  width: 90%;
+  border-radius: 20px;
+  border: 1px solid rgb(145, 145, 145);
 }
 .new-item h3 {
   font-size: 40px;
   font-weight: 300;
-  margin-bottom: 10px;
+  margin: 10px;
+}
+.add-item {
+  margin: 1.5rem;
+  font-size: 1.8rem;
+}
+.add-item input {
+  border: 1px solid rgb(145, 145, 145);
+  font-size: 1.4rem;
+  padding: 0.3rem;
+  width: 60%;
+}
+.add-item input:focus {
+  outline: none;
+}
+.add-item button {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 10px;
+  font-size: 1.6rem;
+  margin-top: 1rem;
+  background: #c2ffdc;
+  outline: none;
+  border: none;
+  transition: all 0.25s;
+  transform-origin: center;
+  text-transform: uppercase;
+}
+.add-item button:hover {
+  cursor: pointer;
+}
+.add-item button:active {
+  background: #75ffb1;
+}
+.item-list {
+  width: 90%;
+  min-height: 300px;
+  margin: 5%;
+  border: 1px solid rgb(145, 145, 145);
+  border-radius: 20px;
+}
+.item-list ul {
+  margin: 15px;
+  list-style-type: none;
+}
+.item-list li {
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  border-left: 0.5px solid rgba(206, 206, 206, 0.5);
+  border-bottom: 1px solid rgba(206, 206, 206, 0.5);
+  margin-bottom: 0.3rem;
+  padding: 0.5rem;
+}
+.item-list li .icon {
+  margin: 0 0.5rem;
+  transition: all 0.5s;
+}
+.item-list li .icon:hover {
+  cursor: pointer;
+}
+.edit:hover {
+  color: #fca27c;
+  text-shadow: 1px 1px black;
+}
+.done:hover {
+  color: #c2ffdc;
+  text-shadow: 1px 1px black;
+}
+.remove:hover {
+  color: #d94a3d;
+  text-shadow: 1px 1px black;
 }
