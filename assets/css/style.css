@@ -129,7 +129,7 @@ h1 {
   color: #fca27c;
   text-shadow: 1px 1px black;
 }
-.done:hover {
+.complete:hover {
   color: #c2ffdc;
   text-shadow: 1px 1px black;
 }
