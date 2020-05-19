@@ -49,8 +49,12 @@ function addToDo(here) {
     newAction.className = "actions";
 
     var editSpan = createSpan("edit");
+    var completeSpan = createSpan("complete");
+    var removeSpan = createSpan("remove");
 
     newAction.appendChild(editSpan);
+    newAction.appendChild(completeSpan);
+    newAction.appendChild(removeSpan);
 
     return newAction;
   }
@@ -61,7 +65,21 @@ function addToDo(here) {
     newSpan.title = what;
 
     var newIcon = document.createElement("i");
-    newIcon.classList.add("fas", "fa-cogs");
+    switch (what) {
+      case "edit":
+        newIcon.classList.add("fas", "fa-cogs");
+        break;
+      case "complete":
+        newIcon.classList.add("fas", "fa-check");
+        break;
+      case "remove":
+        newIcon.classList.add("fas", "fa-trash-alt");
+        break;
+
+      default:
+        console.log("nothing created");
+        break;
+    }
 
     newSpan.appendChild(newIcon);
 
